@@ -117,7 +117,7 @@ npm start
 
 ## 📄 API Documentation
 
-Swagger UI available at: `http://localhost:8080/swagger-ui.html`
+Swagger UI available at: ``
 
 ---
 
@@ -136,15 +136,10 @@ Contributions are welcome! Please fork the repo and create a pull request.
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 📞 Contact
 
-Created by **Your Name** - [your.email@example.com](mailto:your.email@example.com)
+Created by **ESWAR** - erdata2005@outlook.com
 
 ---
 

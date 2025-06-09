@@ -70,8 +70,6 @@ loan-approval-system/
 │
 └── pom.xml / build.gradle                  # Maven or Gradle build files
 
-
-
 ---
 
 ## ⚙️ Getting Started

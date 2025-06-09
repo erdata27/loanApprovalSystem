@@ -1,168 +1,155 @@
-# Loan Approval System
 
-A full-stack loan approval platform with user and admin panels, built using Spring Boot (Java) backend and React frontend. It features JWT-based authentication, rule-based and AI-based eligibility checks, and document management.
+# 🚀 Loan Approval System
 
----
-
-## 🚀 Tech Stack
-
-### Backend
-- Spring Boot
-- Spring AI (for AI/ML-based eligibility scoring)
-- Spring Security (JWT authentication & role-based access)
-- Spring Data JPA (Hibernate)
-- MySQL database
-
-### Frontend
-- React
-- Axios
-- Tailwind CSS / Bootstrap
-
-### Tools
-- Postman (API testing)
-- Swagger (API documentation)
-- IntelliJ IDEA (IDE)
-- MySQL Workbench (Database design)
-- GitHub (Version control)
+A full-stack **Loan Approval System** built with **Spring Boot**, **MongoDB**, and **React** — designed for managing loan applications with secure authentication, admin controls, and optional AI-based eligibility scoring.
 
 ---
 
-## 📁 Project Structure (Backend)
+## 🛠️ Tech Stack
 
-```
+| Backend                                   | Frontend                 | Tools & Utilities                  |
+|-------------------------------------------|--------------------------|----------------------------------|
+| ![Java](https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white) Spring Boot      | ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) React.js       | ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white) Postman          |
+| ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white) MongoDB    | ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white) Axios           | ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black) Swagger UI        |
+| ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?logo=springsecurity&logoColor=white) Spring Security | ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white) Tailwind CSS | ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white) GitHub                 |
+| ![Spring AI ](https://img.shields.io/badge/Spring_AI-6DB33F?logo=spring&logoColor=white) Spring AI (optional) |
+
+---
+
+## 🌟 Features
+
+### User Panel
+- 🔐 Secure **Register/Login** with JWT-based authentication
+- 💰 Apply for loans: enter amount, term, income, employment status, upload documents
+- 📄 View application status & track uploaded documents
+
+### Admin Panel
+- 📊 Dashboard with loan application list & filters
+- 👤 View user details & loan applications
+- ✔️ Manual or **rule-based eligibility checks**
+- ✅ Approve/Reject loans with remarks
+- 📥 Download uploaded documents
+- 🤖 Optional AI-based eligibility scoring using Spring AI or external ML APIs
+
+---
+
+## 📁 Project Structure
 
 loan-approval-system/
-├── controller/
-│   ├── AuthController.java
-│   ├── LoanApplicationController.java
-│   └── AdminController.java
-├── model/
-│   ├── User.java
-│   ├── Role.java
-│   ├── LoanApplication.java
-│   └── Document.java
-├── repository/
-│   ├── UserRepository.java
-│   ├── LoanApplicationRepository.java
-│   └── DocumentRepository.java
-├── service/
-│   ├── AuthService.java
-│   ├── LoanService.java
-│   └── AdminService.java
-├── config/
-│   ├── SecurityConfig.java
-│   └── JwtUtils.java
-└── LoanApprovalSystemApplication.java
+│
+├── src/main/java/com/loanApprovalSystem/
+│   ├── config/
+│   │   ├── SecurityConfig.java            # Spring Security config & JWT setup
+│   │   └── JwtUtils.java                  # JWT utility class
+│   │
+│   ├── controller/
+│   │   ├── AuthController.java            # Auth APIs: register/login
+│   │   ├── LoanApplicationController.java # User loan application APIs
+│   │   └── AdminController.java           # Admin-specific APIs
+│   │
+│   ├── model/
+│   │   ├── User.java                      # User entity
+│   │   ├── Role.java                      # Role enum/entity
+│   │   ├── LoanApplication.java           # Loan application entity
+│   │   └── Document.java                   # Document entity for uploads
+│   │
+│   ├── repository/
+│   │   ├── UserRepository.java
+│   │   ├── LoanApplicationRepository.java
+│   │   └── DocumentRepository.java
+│   │
+│   ├── service/
+│   │   ├── AuthService.java
+│   │   ├── LoanService.java
+│   │   └── AdminService.java
+│   │
+│   └── LoanApprovalSystemApplication.java # Main Spring Boot app starter
+│
+├── src/main/resources/
+│   ├── application.properties             # Configurations incl MongoDB URI, JWT secrets
+│
+└── pom.xml / build.gradle                  # Maven or Gradle build files
 
-````
+
 
 ---
 
-## ⚙️ Setup and Installation
+## ⚙️ Getting Started
 
 ### Prerequisites
-- Java 17 (or 11)
-- MySQL Server installed and running
-- Node.js and npm (for frontend)
-- Git
 
-### Backend Setup
+* Java 17+
+* MongoDB (locally or cloud)
+* Node.js and npm (for frontend)
+* Maven or Gradle
 
-1. Clone the repo:
+### Run Backend
 
-   git clone https://github.com/yourusername/loan-approval-system.git
-   cd loan-approval-system
+bash
+# Clone repo
+git clone https://github.com/yourusername/loan-approval-system.git
+cd loan-approval-system/backend
+
+# Configure MongoDB URI in application.properties
+# Build and run
+./mvnw spring-boot:run
 
 
-2. Create MySQL database:
+### Run Frontend
 
+bash
+cd ../frontend
+npm install
+npm start
 
-   CREATE DATABASE loan_db;
-
-
-3. Configure database in `src/main/resources/application.properties`:
-
-   properties file
-   
-   spring.datasource.url=jdbc:mysql://localhost:3306/loan_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-   spring.datasource.username=your_mysql_username
-   spring.datasource.password=your_mysql_password
-
-   spring.jpa.hibernate.ddl-auto=update
-   spring.jpa.show-sql=true
-
-   jwt.secret=your_jwt_secret_key
-   jwt.expirationMs=86400000
-  
-
-5. Build and run backend:
-
-   bash
-   ./mvnw spring-boot:run
-   # or if using Gradle
-   ./gradlew bootRun
-   
-
-6. Access Swagger UI to test APIs:
-
-   
-   
-   
-
----
-
-### Frontend Setup
-
-1. Navigate to frontend folder (if separate):
-
-   bash
-   cd frontend
-   
-
-2. Install dependencies:
-
-   bash
-   npm install
-   
-
-3. Run the React app:
-
-   bash
-   npm start
-   
-
-4. Open your browser at http://localhost:3000
-
----
-
-## 🔐 Authentication
-
-* Uses JWT tokens.
-* Role-based access control (USER, ADMIN).
-* Secure endpoints with Spring Security.
 
 ---
 
 ## 🧪 Testing
 
-* Backend tests with JUnit and Mockito.
-* Test user registration, login, loan application, admin approval, eligibility rules.
+* Use **Postman** for API testing (import provided collection)
+* Run JUnit tests with Mockito for service and controller layer
 
 ---
 
-## 📄 Features
+## 📄 API Documentation
 
-* User Registration & Login
-* Apply for loans with details & document upload
-* View application status
-* Admin dashboard to approve/reject loans
-* Rule-based and AI-based loan eligibility scoring
-* Secure REST APIs with JWT
+Swagger UI available at: 
+
+---
+
+## 🚀 Optional Add-ons
+
+* Email notifications via **JavaMailSender**
+* Document storage with **AWS S3** or **Firebase Storage**
+* PDF generation of loan application summary
+* Logging and monitoring using **ELK Stack** or **Prometheus**
+
+---
+
+## 👨‍💻 Contributing
+
+Contributions are welcome! Please fork the repo and create a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📞 Contact
 
-For any questions, reach out to erdata2005@outlook.com
+Created by **ESWAR** - erdata2005@outlook.com
 
 ---
+
+Made with ❤️ using Spring Boot & React!
+
+
+---
+
+
+
+

@@ -1,3 +1,5 @@
+Got it! Here's an improved **README.md** with a clear, detailed **Project Structure** section included:
+
 
 # 🚀 Loan Approval System
 
@@ -11,8 +13,8 @@ A full-stack **Loan Approval System** built with **Spring Boot**, **MongoDB**, a
 |-------------------------------------------|--------------------------|----------------------------------|
 | ![Java](https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white) Spring Boot      | ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) React.js       | ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white) Postman          |
 | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white) MongoDB    | ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white) Axios           | ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black) Swagger UI        |
-| ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?logo=springsecurity&logoColor=white) Spring Security | ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white) Tailwind CSS | ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white) GitHub                 |
-| ![Spring AI ](https://img.shields.io/badge/Spring_AI-6DB33F?logo=spring&logoColor=white) Spring AI (optional) |
+| ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?logo=springsecurity&logoColor=white) Spring Security | ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white) Tailwind CSS / Bootstrap | ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white) GitHub                 |
+| ![Spring AI (Experimental)](https://img.shields.io/badge/Spring_AI-6DB33F?logo=spring&logoColor=white) Spring AI (optional) |
 
 ---
 
@@ -71,6 +73,10 @@ loan-approval-system/
 │
 └── pom.xml / build.gradle                  # Maven or Gradle build files
 
+````
+
+---
+
 ## ⚙️ Getting Started
 
 ### Prerequisites
@@ -82,7 +88,7 @@ loan-approval-system/
 
 ### Run Backend
 
-bash
+```bash
 # Clone repo
 git clone https://github.com/yourusername/loan-approval-system.git
 cd loan-approval-system/backend
@@ -90,15 +96,15 @@ cd loan-approval-system/backend
 # Configure MongoDB URI in application.properties
 # Build and run
 ./mvnw spring-boot:run
-
+```
 
 ### Run Frontend
 
-bash
+```bash
 cd ../frontend
 npm install
 npm start
-
+```
 
 ---
 
@@ -111,7 +117,7 @@ npm start
 
 ## 📄 API Documentation
 
-Swagger UI available at: 
+Swagger UI available at: `http://localhost:8080/swagger-ui.html`
 
 ---
 
@@ -138,15 +144,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Created by **ESWAR** - erdata2005@outlook.com
+Created by **Your Name** - [your.email@example.com](mailto:your.email@example.com)
 
 ---
 
 Made with ❤️ using Spring Boot & React!
-
-
----
-
-
-
 

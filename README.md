@@ -34,43 +34,56 @@ A full-stack **Loan Approval System** built with **Spring Boot**, **MongoDB**, a
 ---
 
 ## 📁 Project Structure
-
 loan-approval-system/
 │
-├── src/main/java/com/loanApprovalSystem/
-│   ├── config/
-│   │   ├── SecurityConfig.java            # Spring Security config & JWT setup
-│   │   └── JwtUtils.java                  # JWT utility class
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── loanApprovalSystem/
+│   │   │           ├── config/
+│   │   │           │   ├── SecurityConfig.java
+│   │   │           │   └── JwtUtils.java
+│   │   │           │
+│   │   │           ├── controller/
+│   │   │           │   ├── AuthController.java
+│   │   │           │   ├── LoanApplicationController.java
+│   │   │           │   └── AdminController.java
+│   │   │           │
+│   │   │           ├── model/
+│   │   │           │   ├── User.java
+│   │   │           │   ├── Role.java
+│   │   │           │   ├── LoanApplication.java
+│   │   │           │   └── Document.java
+│   │   │           │
+│   │   │           ├── repository/
+│   │   │           │   ├── UserRepository.java
+│   │   │           │   ├── LoanApplicationRepository.java
+│   │   │           │   └── DocumentRepository.java
+│   │   │           │
+│   │   │           ├── service/
+│   │   │           │   ├── AuthService.java
+│   │   │           │   ├── LoanService.java
+│   │   │           │   └── AdminService.java
+│   │   │           │
+│   │   │           └── LoanApprovalSystemApplication.java
+│   │   │
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── static/
 │   │
-│   ├── controller/
-│   │   ├── AuthController.java            # Auth APIs: register/login
-│   │   ├── LoanApplicationController.java # User loan application APIs
-│   │   └── AdminController.java           # Admin-specific APIs
-│   │
-│   ├── model/
-│   │   ├── User.java                      # User entity
-│   │   ├── Role.java                      # Role enum/entity
-│   │   ├── LoanApplication.java           # Loan application entity
-│   │   └── Document.java                   # Document entity for uploads
-│   │
-│   ├── repository/
-│   │   ├── UserRepository.java
-│   │   ├── LoanApplicationRepository.java
-│   │   └── DocumentRepository.java
-│   │
-│   ├── service/
-│   │   ├── AuthService.java
-│   │   ├── LoanService.java
-│   │   └── AdminService.java
-│   │
-│   └── LoanApprovalSystemApplication.java # Main Spring Boot app starter
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── loanApprovalSystem/
+│                   └── (test classes here)
 │
-├── src/main/resources/
-│   ├── application.properties             # Configurations incl MongoDB URI, JWT secrets
-│
-└── pom.xml / build.gradle                  # Maven or Gradle build files
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+├── pom.xml (or build.gradle)
+└── README.md
 
----
 
 ## ⚙️ Getting Started
 
